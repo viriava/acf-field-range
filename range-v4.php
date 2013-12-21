@@ -82,7 +82,7 @@ class acf_field_range extends acf_field
 		do_action('acf/create_field', array(
 				'type'    => 'radio',
 				'name'  => 'fields[' . $key . '][slider_type]',
-				'choices'  => array('default'=>__('Default','acf'), 'range'=>__('Range','acf')),
+				'choices'  => array('default'=>__('Number','acf'), 'range'=>__('Range','acf')),
 				'value' => $field['slider_type'],
 				'layout'  => 'horizontal'
 			) );
