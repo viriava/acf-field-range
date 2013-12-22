@@ -308,8 +308,7 @@ class acf_field_range extends acf_field
 			'acf-input-range',
 		));
 		
-		wp_enqueue_script('jquery-ui-slider');
-		wp_enqueue_script( 'acf-am-range', $this->settings['dir'] . 'js/range.js', array('jquery-ui-slider'), $this->settings['version'], true );
+		wp_enqueue_script( 'acf-am-range', $this->settings['dir'] . 'js/range.js', array('acf-input-range', 'jquery-ui-slider'), $this->settings['version'], true );
 
 		// styles
 		wp_enqueue_style(array(
@@ -318,7 +317,7 @@ class acf_field_range extends acf_field
 		
 		wp_enqueue_style('acf-am-jquery-ui',  $this->settings['dir'] . 'css/jquery-ui.css',array(),$this->settings['version']);
 
-		wp_enqueue_style('acf-am-range',  $this->settings['dir'] . 'css/range.css',array('acf-am-jquery-ui'),$this->settings['version']);
+		wp_enqueue_style('acf-am-range',  $this->settings['dir'] . 'css/range.css',array('acf-input-range','acf-am-jquery-ui'),$this->settings['version']);
 
 	}
 
