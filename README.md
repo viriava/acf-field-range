@@ -1,4 +1,4 @@
-# ACF Range
+# ACF Range Field
 
 Adds a 'Range' field type for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin.
 
