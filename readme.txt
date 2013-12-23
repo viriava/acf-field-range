@@ -11,7 +11,7 @@ jQuery Range Slider field for Advanced Custom Fields
 
 == Description ==
 
-This is an add-on for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin, that allows you to add a jQuery Range Slider field type.
+This is an add-on for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin, that allows you to add a jQuery Range Slider field type. http://jqueryui.com/slider/
 
 = Compatibility =
 
