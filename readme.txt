@@ -11,7 +11,7 @@ jQuery Range Slider field for Advanced Custom Fields
 
 == Description ==
 
-This is an add-on for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin, that allows you to add a jQuery Range Slider field type.
+This is an add-on for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin, that allows you to add a jQuery Range Slider field type. http://jqueryui.com/slider/
 
 = Compatibility =
 
@@ -44,7 +44,7 @@ function my_register_fields()
 
 **What does it return?**
 
-If the type is Default, it returns the number. If the type is Range, it returns an array of minimum and maximum numbers. array('min'=>0, 'max'=>0)
+If type is Default, it returns the number. If type is Range, it returns array of minimum and maximum numbers. array('min'=>0, 'max'=>0)
 
 
 == Changelog ==
