@@ -45,9 +45,9 @@ function my_register_fields()
 
 **What does it return?**
 
-If type is Default, it returns the number. 
+If the type is Default, it returns the number. 
 
-If type is Range, it returns array of minimum and maximum numbers. 
+If the type is Range, it returns an array of minimum and maximum numbers. 
 
 
 		array(2) { 
