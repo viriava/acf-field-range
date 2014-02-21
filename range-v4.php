@@ -76,6 +76,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_range_type field_option_<?php echo $this->name; ?>">
 	<td class="label">
 		<label><?php _e("Type",'acf'); ?></label>
+		<p class="description"><?php _e('Choose the number or slider view','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -92,6 +93,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
 		<label><?php _e("Min Value",'acf'); ?></label>
+		<p class="description"><?php _e('Entry the minimum value','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -106,6 +108,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
 		<label><?php _e("Max Value",'acf'); ?></label>
+		<p class="description"><?php _e('Entry the maximum value','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -120,6 +123,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
 		<label><?php _e("Step",'acf'); ?></label>
+		<p class="description"><?php _e('Entry the step value','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -134,6 +138,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
 		<label><?php _e("Title",'acf'); ?></label>
+		<p class="description"><?php _e('Entry the title of the field','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -148,6 +153,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
 		<label><?php _e("Symbol",'acf'); ?></label>
+		<p class="description"><?php _e('Entry the symbol. For example USD, $ and etc. ','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -162,6 +168,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
 		<label><?php _e("Symbol Position",'acf'); ?></label>
+		<p class="description"><?php _e('Choose the symbol position','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -178,6 +185,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_range_separate field_option_<?php echo $this->name; ?>" <?php /*if( $field['slider_type']!='range' ): ?>style="display:none"<?php endif;*/ ?>>
 	<td class="label">
 		<label><?php _e("Separate Symbol",'acf'); ?></label>
+		<p class="description"><?php _e('Choose the separator for two values on the Slider view','acf'); ?></p>
 	</td>
 	<td>
 		<?php
