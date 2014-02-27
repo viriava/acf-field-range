@@ -3,7 +3,7 @@
 Plugin Name: Advanced Custom Fields: Range
 Plugin URI: https://github.com/viriava/acf-field-range
 Description: jQuery Range Slider field for Advanced Custom Fields
-Version: 1.0.0
+Version: 1.1.0
 Author: viriava
 Author URI: http://www.crazyxhtml.com
 License: GPLv2 or later

@@ -3,7 +3,7 @@ Contributors: viriava
 Tags:
 Requires at least: 4.2.0
 Tested up to: 4.3.2
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,3 +51,8 @@ If the type is Default, it returns the number. If the type is Range, it returns 
 
 = 1.0.0 =
 * Initial version
+
+= 1.1.0 =
+* Added descriptions for fields
+* Added default values
+* Updated prepend and append functionality

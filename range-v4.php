@@ -26,11 +26,13 @@ class acf_field_range extends acf_field
 			'slider_type' => 'default',
 			'min' => 0,
 			'max' => 100,
+			'default_value_1' => 0,
+			'default_value_2' => 100,
 			'step' => 1,
 			'title' => __('Range','acf'),
 			'separate' => '-',
-			'symbol' => '',
-			'symbol_position'  => 'before'
+			'prepend' => '',
+			'append'  => ''
 		);
 
 
@@ -42,7 +44,7 @@ class acf_field_range extends acf_field
 		$this->settings = array(
 			'path' => apply_filters('acf/helpers/get_path', __FILE__),
 			'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
-			'version' => '1.0.0'
+			'version' => '1.1.0'
 		);
 
 	}
@@ -92,53 +94,8 @@ class acf_field_range extends acf_field
 </tr>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-		<label><?php _e("Min Value",'acf'); ?></label>
-		<p class="description"><?php _e('Entry the minimum value','acf'); ?></p>
-	</td>
-	<td>
-		<?php
-		do_action('acf/create_field', array(
-				'type'    => 'number'
-				, 'name'  => 'fields[' . $key . '][min]'
-				, 'value' => $field['min']
-			) );
-		?>
-	</td>
-</tr>
-<tr class="field_option field_option_<?php echo $this->name; ?>">
-	<td class="label">
-		<label><?php _e("Max Value",'acf'); ?></label>
-		<p class="description"><?php _e('Entry the maximum value','acf'); ?></p>
-	</td>
-	<td>
-		<?php
-		do_action('acf/create_field', array(
-				'type'    => 'number'
-				, 'name'  => 'fields[' . $key . '][max]'
-				, 'value' => $field['max']
-			) );
-		?>
-	</td>
-</tr>
-<tr class="field_option field_option_<?php echo $this->name; ?>">
-	<td class="label">
-		<label><?php _e("Step",'acf'); ?></label>
-		<p class="description"><?php _e('Entry the step value','acf'); ?></p>
-	</td>
-	<td>
-		<?php
-		do_action('acf/create_field', array(
-				'type'    => 'number'
-				, 'name'  => 'fields[' . $key . '][step]'
-				, 'value' => $field['step']
-			) );
-		?>
-	</td>
-</tr>
-<tr class="field_option field_option_<?php echo $this->name; ?>">
-	<td class="label">
 		<label><?php _e("Title",'acf'); ?></label>
-		<p class="description"><?php _e('Entry the title of the field','acf'); ?></p>
+		<p class="description"><?php _e('eg. Show extra content before numbers','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -152,32 +109,30 @@ class acf_field_range extends acf_field
 </tr>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-		<label><?php _e("Symbol",'acf'); ?></label>
-		<p class="description"><?php _e('Entry the symbol. For example USD, $ and etc. ','acf'); ?></p>
+		<label><?php _e("Prepend",'acf'); ?></label>
+		<p class="description"><?php _e('Appears before the number','acf'); ?></p>
 	</td>
 	<td>
 		<?php
 		do_action('acf/create_field', array(
 				'type'    => 'text'
-				, 'name'  => 'fields[' . $key . '][symbol]'
-				, 'value' => $field['symbol']
+				, 'name'  => 'fields[' . $key . '][prepend]'
+				, 'value' => $field['prepend']
 			) );
 		?>
 	</td>
 </tr>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-		<label><?php _e("Symbol Position",'acf'); ?></label>
-		<p class="description"><?php _e('Choose the symbol position','acf'); ?></p>
+		<label><?php _e("Append",'acf'); ?></label>
+		<p class="description"><?php _e('Appears after the number','acf'); ?></p>
 	</td>
 	<td>
 		<?php
 		do_action('acf/create_field', array(
-				'type'    => 'radio',
-				'name'  => 'fields[' . $key . '][symbol_position]',
-				'choices'  => array('before'=>__('Before','acf'), 'after'=>__('After','acf')),
-				'value' => $field['symbol_position'],
-				'layout'  => 'horizontal'
+				'type'    => 'text'
+				, 'name'  => 'fields[' . $key . '][append]'
+				, 'value' => $field['append']
 			) );
 		?>
 	</td>
@@ -185,7 +140,7 @@ class acf_field_range extends acf_field
 <tr class="field_option field_option_range_separate field_option_<?php echo $this->name; ?>" <?php /*if( $field['slider_type']!='range' ): ?>style="display:none"<?php endif;*/ ?>>
 	<td class="label">
 		<label><?php _e("Separate Symbol",'acf'); ?></label>
-		<p class="description"><?php _e('Choose the separator for two values on the Slider view','acf'); ?></p>
+		<p class="description"><?php _e('Choose the separator for two values for the Slider view','acf'); ?></p>
 	</td>
 	<td>
 		<?php
@@ -193,6 +148,78 @@ class acf_field_range extends acf_field
 				'type'    => 'text'
 				, 'name'  => 'fields[' . $key . '][separate]'
 				, 'value' => $field['separate']
+			) );
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Default Value #1",'acf'); ?></label>
+		<p class="description"><?php _e('Appears when creating a new post','acf'); ?></p>
+	</td>
+	<td>
+		<?php
+		do_action('acf/create_field', array(
+				'type'    => 'number'
+				, 'name'  => 'fields[' . $key . '][default_value_1]'
+				, 'value' => $field['default_value_1']
+			) );
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Default Value #2",'acf'); ?></label>
+		<p class="description"><?php _e('Appears when creating a new post for the Slider view','acf'); ?></p>
+	</td>
+	<td>
+		<?php
+		do_action('acf/create_field', array(
+				'type'    => 'number'
+				, 'name'  => 'fields[' . $key . '][default_value_2]'
+				, 'value' => $field['default_value_2']
+			) );
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Minimum Value",'acf'); ?></label>
+	</td>
+	<td>
+		<?php
+		do_action('acf/create_field', array(
+				'type'    => 'number'
+				, 'name'  => 'fields[' . $key . '][min]'
+				, 'value' => $field['min']
+			) );
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Maximum Value",'acf'); ?></label>
+	</td>
+	<td>
+		<?php
+		do_action('acf/create_field', array(
+				'type'    => 'number'
+				, 'name'  => 'fields[' . $key . '][max]'
+				, 'value' => $field['max']
+			) );
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Step Size",'acf'); ?></label>
+	</td>
+	<td>
+		<?php
+		do_action('acf/create_field', array(
+				'type'    => 'number'
+				, 'name'  => 'fields[' . $key . '][step]'
+				, 'value' => $field['step']
 			) );
 		?>
 	</td>
@@ -227,30 +254,23 @@ class acf_field_range extends acf_field
 			$slider_type = 'default';
 		$min = $field['min'];
 		$max = $field['max'];
-		$symbol_position = $field['symbol_position'];
+		$prepend = $field['prepend'];
+		$append = $field['append'];
+		$default_value_1 = $field['default_value_1'];
+		$default_value_2 = $field['default_value_2'];
 		$value = $field['value'];
 
-		$symbol_before = '';
-		$symbol_after = '';
 		$title = '';
 		if(!empty($field['title'])){
 			$title = '<span class="am_range_amount_title"> '.$field['title'].' </span>';
 		}
-		$symbol = '';
-		if(!empty($field['symbol'])){
-			$symbol = '<span class="am_range_amount_symbol"> '.$field['symbol'].'</span>';
-			if($symbol_position=='after'){
-				$symbol_after = $symbol;
-			}else{
-				$symbol_before = $symbol;
-			}
-		}
+		
 		$separate = '';
 		if(!empty($field['separate'])){
 			$separate = ' <span class="am_range_amount_sep">'.$field['separate'].'</span> ';
 		}
-		$min_cur = $min;
-		$max_cur = $max;
+		$min_cur = $default_value_1;
+		$max_cur = $default_value_2;
 		if($slider_type=='range'){
 			if(!empty($value)){
 				$value_ar = explode(';', $value);
@@ -276,9 +296,9 @@ class acf_field_range extends acf_field
 		echo '<div class="am_range_amount">';
 		
 		if($slider_type=='range'){
-			echo '<p>'.$title.$symbol_before.'<span class="am_range_amount_min"></span>'.$symbol_after.$separate.$symbol_before.'<span class="am_range_amount_max"></span>'.$symbol_after.'</p>';
+			echo '<p>'.$title.$prepend.'<span class="am_range_amount_min"></span>'.$append.$separate.$prepend.'<span class="am_range_amount_max"></span>'.$append.'</p>';
 		}else{
-			echo '<p>'.$title.$symbol_before.'<span class="am_range_amount_min"></span>'.$symbol_after.'</p>';
+			echo '<p>'.$title.$prepend.'<span class="am_range_amount_min"></span>'.$append.'</p>';
 		}
 		
 		echo '<div class="am_range" data-min="' . $min . '" data-max="' . $max . '" data-min-cur="' . $min_cur . '" data-max-cur="' . $max_cur . '" data-step="' . $step . '" data-type="' . $slider_type . '"></div>';
