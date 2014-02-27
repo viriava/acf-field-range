@@ -46,6 +46,10 @@ function my_register_fields()
 
 If the type is Default, it returns the number. If the type is Range, it returns an array of minimum and maximum numbers. array('min'=>0, 'max'=>0)
 
+== Screenshots ==
+
+1. Screenshort
+
 
 == Changelog ==
 
