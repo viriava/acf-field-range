@@ -49,10 +49,10 @@ If the type is Default, it returns the number. If the type is Range, it returns 
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial version
-
 = 1.1.0 =
 * Added descriptions for fields
 * Added default values
 * Updated prepend and append functionality
+
+= 1.0.0 =
+* Initial version
