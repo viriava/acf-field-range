@@ -44,7 +44,7 @@ class acf_field_range extends acf_field
 		$this->settings = array(
 			'path' => apply_filters('acf/helpers/get_path', __FILE__),
 			'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
-			'version' => '1.1.1'
+			'version' => '1.1.2'
 		);
 
 	}
@@ -272,7 +272,7 @@ class acf_field_range extends acf_field
 		$min_cur = $default_value_1;
 		$max_cur = $default_value_2;
 		if($slider_type=='range'){
-			if(!empty($value)){
+			if($value!=''){
 				$value_ar = explode(';', $value);
 				if(isset($value_ar[0])){
 					$min_cur = $value_ar[0];
@@ -285,7 +285,7 @@ class acf_field_range extends acf_field
 				$value = $min_cur.';'.$max_cur;
 			}
 		}else{
-			if(!empty($value)){
+			if($value!=''){
 				$min_cur = $max_cur = $value;
 			}
 			if($value===false){
@@ -503,13 +503,13 @@ class acf_field_range extends acf_field
 		// format value
 	    if( !$value )
 	    {
-	    	return false;
+	    	return 0;
 	    }
 	
 	
 	    if( $value == 'null' )
 	    {
-	    	return false;
+	    	return 0;
 	    }
 	    
 	    $temp = explode(';', $value);
