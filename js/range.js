@@ -7,10 +7,10 @@
 		$(postbox).find('div.am_range_amount').each(function(){
 			var box = $(this);
 			var slider = box.find('div.am_range')
-				, min_val = parseInt(slider.attr('data-min'))
-				, max_val = parseInt(slider.attr('data-max'))
-				, min_cur_val = parseInt(slider.attr('data-min-cur'))
-				, max_cur_val = parseInt(slider.attr('data-max-cur'))
+				, min_val = parseFloat(slider.attr('data-min'))
+				, max_val = parseFloat(slider.attr('data-max'))
+				, min_cur_val = parseFloat(slider.attr('data-min-cur'))
+				, max_cur_val = parseFloat(slider.attr('data-max-cur'))
 				, step_val = parseFloat(slider.attr('data-step'))
 				, step_type = slider.attr('data-type');
 
