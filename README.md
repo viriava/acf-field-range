@@ -4,7 +4,7 @@ Adds a 'Range' field type for the [Advanced Custom Fields](http://wordpress.org/
 
 -----------------------
 
-### Works with ACF 4.2.0
+### Works with ACF 4.2.0 and ACF 5
 
 ### Overview
 
