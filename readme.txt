@@ -3,8 +3,8 @@ Contributors: viriava
 Donate link: http://www.crazyxhtml.com
 Tags: acf, field, range, jquery
 Requires at least: 3.0.1
-Tested up to: 3.8
-Stable tag: 1.1.2
+Tested up to: 3.9.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,9 @@ If the type is Range, it returns an array of minimum and maximum numbers.
 1. Default look
 
 == Changelog ==
+
+= 1.1.3 =
+* ACF5 compatible
 
 = 1.1.2 =
 * ZERO bug fixed
