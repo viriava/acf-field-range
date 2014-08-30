@@ -501,16 +501,26 @@ class acf_field_range extends acf_field
 	function format_value_for_api($value, $post_id, $field)
 	{
 		// format value
-	    if( !$value )
-	    {
-	    	return 0;
-	    }
-	
-	
-	    if( $value == 'null' )
-	    {
-	    	return 0;
-	    }
+	    if ( empty($value) ) {
+			
+			if ( empty($field['default_value_1']) ) {
+				$default_value_1 = 0;
+			} else {
+				$default_value_1 = $field['default_value_1'];
+			}
+
+			if ( empty($field['default_value_2']) ) {
+				$default_value_2 = 0;
+			} else {
+				$default_value_2 = $field['default_value_2'];
+			}
+
+			if ( $field['slider_type'] == 'range' ) {
+				$value = $default_value_1.';'.$default_value_2;
+			} else {
+				$value = $default_value_1;
+			}
+		}
 	    
 	    $temp = explode(';', $value);
 	    
