@@ -281,14 +281,14 @@ class acf_field_range extends acf_field
 					$max_cur = $value_ar[1];
 				}
 			}
-			if($value===false){
+			if($value===false || empty($value)){
 				$value = $min_cur.';'.$max_cur;
 			}
 		}else{
-			if($value!=''){
+			if( isset( $value ) && $value!=''){
 				$min_cur = $max_cur = $value;
 			}
-			if($value===false){
+			if( isset( $value ) && $value===false){
 				$value = $min_cur;
 			}
 		}

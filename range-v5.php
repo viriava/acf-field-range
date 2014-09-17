@@ -243,7 +243,7 @@ class acf_field_range extends acf_field {
 					$max_cur = $value_ar[1];
 				}
 			}
-			if($value===false){
+			if($value===false || empty($value)){
 				$value = $min_cur.';'.$max_cur;
 			}
 		}else{
@@ -539,26 +539,16 @@ class acf_field_range extends acf_field {
 	function format_value($value, $post_id, $field)
 	{
 		// format value
-		if ( empty($value) ) {
-			
-			if ( empty($field['default_value_1']) ) {
-				$default_value_1 = 0;
-			} else {
-				$default_value_1 = $field['default_value_1'];
-			}
-
-			if ( empty($field['default_value_2']) ) {
-				$default_value_2 = 0;
-			} else {
-				$default_value_2 = $field['default_value_2'];
-			}
-
-			if ( $field['slider_type'] == 'range' ) {
-				$value = $default_value_1.';'.$default_value_2;
-			} else {
-				$value = $default_value_1;
-			}
-		}
+	    if( !$value )
+	    {
+	    	return 0;
+	    }
+	
+	
+	    if( $value == 'null' )
+	    {
+	    	return 0;
+	    }
 	    
 	    $temp = explode(';', $value);
 	    
