@@ -3,7 +3,7 @@
  */
 (function($){
 	
-	$(document).live('acf/setup_fields', function(e, postbox){
+	$(document).on('acf/setup_fields', function(e, postbox){
 		$(postbox).find('div.am_range_amount').each(function(){
 			var box = $(this);
 			var slider = box.find('div.am_range')
